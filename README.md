@@ -1,3 +1,46 @@
+# Theme Builder / Style Builder
+
+## URL structure
+
+```
+
+domain/
+
+
+domain/app
+domain/app/[framework]/
+domain/app/[framework]/[component]
+
+
+
+
+domain/components/bootstrap/button
+
+ex:
+domain.com/app/bootstrap/button
+domain.com/app/bootstrap/grid
+domain.com/app/bootstrap/checkbox
+
+domain.com/app/uikit/button
+domain.com/app/uikit/radio
+domain.com/app/uikit/checkbox
+
+
+api.domain.com/framework=bootstrap&....
+
+
+domain.com/app/uikit/button
+
+
+
+domain.com/app/bootstrap/button
+domain.com/app/bootstrap/button
+domain.com/app/bootstrap/button
+
+
+
+```
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
