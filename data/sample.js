@@ -1,26 +1,26 @@
 export const frameworks = [
   {
     id: 1,
-    name: 'uikit',
+    name: "uikit",
   },
   {
     id: 2,
-    name: 'bootstrap',
+    name: "bootstrap",
   },
-]
+];
 
 export const components = [
   {
     id: 1,
-    name: 'button',
+    name: "button",
     framework_id: 1,
   },
   {
     id: 2,
-    name: 'label',
+    name: "label",
     framework_id: 1,
   },
-]
+];
 
 export const templates = [
   {
@@ -37,7 +37,7 @@ export const templates = [
     `,
     component_id: 2,
   },
-]
+];
 
 export const schemas = [
   {
@@ -110,6 +110,6 @@ export const schemas = [
   `,
     template_id: 2,
   },
-]
+];
 
-export const initialTemplate = {}
+export const initialTemplate = {};
