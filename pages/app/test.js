@@ -1,7 +1,6 @@
 import React from 'react';
 import useClipboard from "react-use-clipboard";
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import { docco } from 'react-syntax-highlighter/src/styles/hljs';
 
 export default function Test() {
   let code= <button>Button</button>
@@ -35,7 +34,7 @@ export default function Test() {
           <button onClick={setCopied}>
             Copy {isCopied ? "Yes! 👍" : "Nope! 👎"}
           </button>
-          <SyntaxHighlighter language="javascript" style={docco}>
+          <SyntaxHighlighter language="javascript">
             {codeString}
           </SyntaxHighlighter>
         </div>
