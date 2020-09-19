@@ -33,12 +33,11 @@ export const templates = [
   {
     id: 2,
     code: `
-      <span class="uk-label {{style}} {{is_disabled}}"></span>      
+      <span class="uk-label ${style} {{is_disabled}}"></span>      
     `,
     component_id: 2,
   },
 ]
-
 export const schemas = [
   {
     id: 1,
