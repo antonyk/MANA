@@ -29,7 +29,7 @@ export default function Header() {
           <div className='uk-navbar-right uk-margin-right'>
             <ul className='uk-navbar-nav'>
               <li>
-                <a className='uk-hidden@small' type="button" data-uk-toggle="target: #sidebar"><i className="fad fa-bars fa-2x"></i></a>
+                <a className='uk-hidden@m' type="button" data-uk-toggle="target: #sidebar"><i className="fad fa-bars fa-2x"></i></a>
               </li>
             </ul>
           </div>

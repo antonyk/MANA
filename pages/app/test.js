@@ -3,29 +3,30 @@ import useClipboard from "react-use-clipboard";
 import SyntaxHighlighter from 'react-syntax-highlighter';
 
 export default function Test() {
-  let code= <button>Button</button>
-  let codeString = `
-  <ul uk-accordion>
-    <li class="uk-open">
-      <a class="uk-accordion-title" href="#">Item 1</a>
-      <div class="uk-accordion-content">
+  let code = [<ul data-uk-accordion>
+    <li className="uk-open">
+      <a className="uk-accordion-title" href="#">Item 1</a>
+      <div className="uk-accordion-content">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
       </div>
     </li>
     <li>
-      <a class="uk-accordion-title" href="#">Item 2</a>
-      <div class="uk-accordion-content">
+      <a className="uk-accordion-title" href="#">Item 2</a>
+      <div className="uk-accordion-content">
         <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor reprehenderit.</p>
       </div>
     </li>
     <li>
-      <a class="uk-accordion-title" href="#">Item 3</a>
-      <div class="uk-accordion-content">
+      <a className="uk-accordion-title" href="#">Item 3</a>
+      <div className="uk-accordion-content">
         <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat proident.</p>
       </div>
     </li>
-  </ul>
-  `
+  </ul>]
+
+  let codeString=(code)=>code
+  
+  
   let [isCopied, setCopied] = useClipboard(codeString);
   return (
     <div className="uk-section">
@@ -34,8 +35,9 @@ export default function Test() {
           <button onClick={setCopied}>
             Copy {isCopied ? "Yes! 👍" : "Nope! 👎"}
           </button>
+          
           <SyntaxHighlighter language="javascript">
-            {codeString}
+            {codeString(code[0])}
           </SyntaxHighlighter>
         </div>
         <div>
