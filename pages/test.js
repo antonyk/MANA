@@ -145,13 +145,17 @@ function ComponentSettings(props) {
         <h2>Settings UI</h2>
         <form>
           {settings.map((item) => (
-            <SettingsItem setting={item} />
+            <SettingsItem
+              setting={item}
+              curValue={moustacheJson}
+              setValue={setMoustacheJson}
+            />
           ))}
         </form>
       </section>
       <section>
         <h2>Output JSON</h2>
-        <pre>{JSON.stringify(moustacheJson)}</pre>
+        <pre>{JSON.stringify(moustacheJson, null, 2)}</pre>
       </section>
     </div>
   )
@@ -163,18 +167,28 @@ function ComponentSnippet(props) {
 }
 
 function SettingsItem(props) {
-  const { type, label, initial, cssClass, name } = props.setting
+  const { type, label, initial, cssClass, name, varname } = props.setting
   const [current, setCurrent] = useState(props.setting.current)
+  const [curValue, setCurValue] = useState()
 
   const testing = <h1>HELLO</h1>
 
   function checkboxChangeHandler(e) {
     setCurrent(e.target.checked)
+    setCurValue({ [varname]: e.target.checked })
   }
 
-  function radioChangeHandler(e) {
+  function radioChangeHandler(e, val) {
     setCurrent(e.target.checked)
+    setCurValue({ [varname]: val })
+    console.log(val)
   }
+
+  //   const curValue = {"size":".uk-button-small"}
+
+  useEffect(() => {
+    props.setValue({ ...props.curValue, ...curValue })
+  }, [curValue])
 
   return (
     <>
@@ -212,7 +226,7 @@ function SettingsItem(props) {
                   className={'uk-radio ' + cssClass}
                   type='radio'
                   checked
-                  onChange={radioChangeHandler}
+                  onChange={(e) => radioChangeHandler(e, item.value)}
                 />
                 {item.name}
               </label>
@@ -222,7 +236,7 @@ function SettingsItem(props) {
                   name={name}
                   className={'uk-radio ' + cssClass}
                   type='radio'
-                  onChange={radioChangeHandler}
+                  onChange={(e) => radioChangeHandler(e, item.value)}
                 />
                 {item.name}
               </label>
