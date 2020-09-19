@@ -13,9 +13,9 @@ const buttonSettings = [
   {
     name: 'button-disabled',
     type: 'checkbox',
-    class: 'mana-checkbox',
+    cssClass: 'mana-checkbox',
     varname: 'is_disabled',
-    default: false,
+    initial: false,
     current: false,
     label: 'Disabled',
   },
@@ -30,9 +30,9 @@ const buttonSettings = [
       { name: 'Text', value: '.uk-button-text' },
       { name: 'Link', value: '.uk-button-link' },
     ],
-    class: 'mana-radio',
+    cssClass: 'mana-radio',
     varname: 'style',
-    default: 'Default',
+    initial: 'Default',
     current: 'Default',
     label: 'Style',
   },
@@ -44,9 +44,9 @@ const buttonSettings = [
       { name: 'Small', value: '.uk-button-small' },
       { name: 'Large', value: '.uk-button-large' },
     ],
-    class: 'mana-radio',
+    cssClass: 'mana-radio',
     varname: 'size',
-    default: 'Default',
+    initial: 'Default',
     current: 'Default',
     label: 'Size',
   },
@@ -74,6 +74,8 @@ const buttonTemplate = `
 `
 
 export default function Test() {
+  const [vars, setVars] = useState()
+
   return (
     <div className={styles.container}>
       <Head>
@@ -92,6 +94,8 @@ export default function Test() {
           settings={buttonSettings}
           template={buttonTemplate}
         />
+
+        <ComponentSnippet template={buttonTemplate} vars={vars} />
       </main>
 
       <footer className={styles.footer}>
@@ -121,11 +125,113 @@ function ComponentSettings(props) {
     setMoustacheJson(result)
   }, [settings])
 
+  //   useEffect(() => {
+  //       let html = ''
+  //       settings.forEach(item => {
+  //         if (item.type) === 'checkbox' {
+  //             html += 'checkbox'
+  //         }
+  //       })
+  //     }, [])
+
+  return (
+    <div>
+      <h1>Component Settings</h1>
+      <section>
+        <h2>Settings JSON</h2>
+        {/* <pre>{JSON.stringify(settings)}</pre> */}
+      </section>
+      <section>
+        <h2>Settings UI</h2>
+        <form>
+          {settings.map((item) => (
+            <SettingsItem setting={item} />
+          ))}
+        </form>
+      </section>
+      <section>
+        <h2>Output JSON</h2>
+        <pre>{JSON.stringify(moustacheJson)}</pre>
+      </section>
+    </div>
+  )
+}
+
+function ComponentSnippet(props) {
+  //     const
+  return ''
+}
+
+function SettingsItem(props) {
+  const { type, label, initial, cssClass, name } = props.setting
+  const [current, setCurrent] = useState(props.setting.current)
+
+  const testing = <h1>HELLO</h1>
+
+  function checkboxChangeHandler(e) {
+    setCurrent(e.target.checked)
+  }
+
+  function radioChangeHandler(e) {
+    setCurrent(e.target.checked)
+  }
+
   return (
     <>
-      <pre>{JSON.stringify(settings)}</pre>
-      Hello World!
-      <pre>{JSON.stringify(moustacheJson)}</pre>
+      {/* {testing} */}
+      {type == 'checkbox' ? (
+        current ? (
+          <label>
+            <input
+              name={name}
+              className={'uk-checkbox ' + cssClass}
+              type='checkbox'
+              checked
+              onChange={checkboxChangeHandler}
+            />
+            {label}
+          </label>
+        ) : (
+          <label>
+            <input
+              name={name}
+              className={'uk-checkbox ' + cssClass}
+              type='checkbox'
+              onChange={checkboxChangeHandler}
+            />
+            {label}
+          </label>
+        )
+      ) : type == 'radio' ? (
+        <div className='uk-margin uk-grid-small uk-child-width-auto uk-grid'>
+          {props.setting.items.map((item) => {
+            return item.name == current ? (
+              <label>
+                <input
+                  name={name}
+                  className={'uk-radio ' + cssClass}
+                  type='radio'
+                  checked
+                  onChange={radioChangeHandler}
+                />
+                {item.name}
+              </label>
+            ) : (
+              <label>
+                <input
+                  name={name}
+                  className={'uk-radio ' + cssClass}
+                  type='radio'
+                  onChange={radioChangeHandler}
+                />
+                {item.name}
+              </label>
+            )
+          })}
+        </div>
+      ) : (
+        ''
+      )}
     </>
   )
 }
