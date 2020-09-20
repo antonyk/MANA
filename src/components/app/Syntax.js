@@ -1,110 +1,112 @@
 const syntax = {
   "hljs-comment": {
-    "color": "#408080",
-    "fontStyle": "italic"
+    color: "#64dfdf",
+    fontStyle: "italic",
   },
   "hljs-quote": {
-    "color": "#408080",
-    "fontStyle": "italic"
+    color: "#64dfdf",
+    fontStyle: "italic",
   },
   "hljs-keyword": {
-    "color": "#954121"
+    color: "#ffb4a2",
   },
   "hljs-selector-tag": {
-    "color": "#954121"
+    color: "#ffb4a2",
   },
   "hljs-literal": {
-    "color": "#954121"
+    color: "#ffb4a2",
   },
   "hljs-subst": {
-    "color": "#954121"
+    color: "#ffb4a2",
   },
   "hljs-number": {
-    "color": "#40a070"
+    color: "#ffb4a2",
   },
   "hljs-string": {
-    "color": "#219161"
+    color: "#06bcc2", // string inside classes
   },
   "hljs-doctag": {
-    "color": "#219161"
+    color: "#ffb4a2",
   },
   "hljs-selector-id": {
-    "color": "#19469d"
+    color: "#ffb4a2",
   },
   "hljs-selector-class": {
-    "color": "#19469d"
+    color: "#ffb4a2",
   },
   "hljs-section": {
-    "color": "#19469d"
+    color: "#ffb4a2",
   },
   "hljs-type": {
-    "color": "#19469d"
+    color: "#ffb4a2",
   },
   "hljs-params": {
-    "color": "#00f"
+    color: "#ffb4a2",
   },
   "hljs-title": {
-    "color": "#458",
-    "fontWeight": "bold"
+    color: "#ffb4a2",
+    fontWeight: "bold",
   },
   "hljs-tag": {
-    "color": "#000080",
-    "fontWeight": "normal"
+    color: "#6a4dff", // greater/less than and className
+    fontWeight: "normal",
   },
   "hljs-name": {
-    "color": "#000080",
-    "fontWeight": "normal"
+    color: "#d100d1", // tag names
+    fontWeight: "normal",
   },
   "hljs-attribute": {
-    "color": "#000080",
-    "fontWeight": "normal"
+    color: "#6a4dff",
+    fontWeight: "normal",
   },
   "hljs-variable": {
-    "color": "#6a4cff"
+    color: "#6a4dff",
   },
   "hljs-template-variable": {
-    "color": "#6a4cff"
+    color: "#6a4dff",
   },
   "hljs-regexp": {
-    "color": "#b68"
+    color: "#6a4dff",
   },
   "hljs-link": {
-    "color": "#b68"
+    color: "#6a4dff",
   },
   "hljs-symbol": {
-    "color": "#990073"
+    color: "#6a4dff",
   },
   "hljs-bullet": {
-    "color": "#990073"
+    color: "#6a4dff",
   },
   "hljs-built_in": {
-    "color": "#0086b3"
+    color: "#6a4dff",
   },
   "hljs-builtin-name": {
-    "color": "#0086b3"
+    color: "#6a4dff",
   },
   "hljs-meta": {
-    "color": "#999",
-    "fontWeight": "bold"
+    color: "#6a4dff",
+    fontWeight: "bold",
   },
   "hljs-deletion": {
-    "background": "#fdd"
+    background: "#6a4dff",
   },
   "hljs-addition": {
-    "background": "#dfd"
+    background: "#6a4dff",
   },
   "hljs-emphasis": {
-    "fontStyle": "italic"
+    fontStyle: "italic",
   },
   "hljs-strong": {
-    "fontWeight": "bold"
+    fontWeight: "bold",
   },
-  "hljs": {
-    "display": "block",
-    "overflowX": "auto",
-    "background": "#eff2f9",
-    "color": "#5e6472",
-    "padding": "0.5em"
+  hljs: {
+    display: "block",
+    overflowX: "auto",
+    background: "#eff2f9",
+    color: "#c4c5c9", // text inside tags and divs
+    padding: "0.5em",
+    border: "1px solid #eff2f9",
+    "border-radius": "0px",
   },
 };
-export default syntax
+export default syntax;
