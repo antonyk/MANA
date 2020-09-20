@@ -17,7 +17,8 @@ export default function SidebarMenu() {
             onClick={handleClick}
           >{`${item.framework_name}`}</h4>
         ))} */}
-        <select className="uk-select uk-margin-bottom"  onChange={handleClick}>
+        <select className="uk-select" onChange={handleClick}>
+          <option>Select Framework</option>
           {frameworks.map((item) => (
             <option
             value={item.framework_id}
@@ -28,8 +29,8 @@ export default function SidebarMenu() {
       {frameworkID
         ? frameworks[frameworkID].components
             .sort()
-            .map((item) => <li>{`${item}`}</li>)
-          : "Select a framework to get started"}
+            .map((item) => <li className='uk-margin-top'>{`${item}`}</li>)
+          : ""}
       </ul>  
     </>
   );
