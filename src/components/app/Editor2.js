@@ -103,6 +103,15 @@ export default function Editor() {
       </>
     )
   } else {
-    return <div>Unknown component?</div>
+    return (
+      <div className="uk-section">
+        <div className="uk-container uk-container-small">
+          <div className="uk-card uk-card-primary uk-card-body uk-text-center uk-margin-top">
+            <h2>We are working on it!</h2>
+          </div>
+        </div>
+      </div>
+      
+    )
   }
 }

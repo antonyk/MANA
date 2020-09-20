@@ -71,3 +71,7 @@ a:hover,
 .uk-radio {
   border-color: #6a4cff !important;
 }
+
+.uk-card-primary {
+  background: #6a4cff !important;
+}
