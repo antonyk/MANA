@@ -7,44 +7,44 @@ const syntax = {
     color: "#64dfdf",
     fontStyle: "italic",
   },
-  "hljs-keyword": {
-    color: "#ffb4a2",
+  "hljs-keyword": { //class=
+    color: "#d100d1",
   },
   "hljs-selector-tag": {
-    color: "#ffb4a2",
+    color: "#d100d1",
   },
   "hljs-literal": {
-    color: "#ffb4a2",
+    color: "#d100d1",
   },
   "hljs-subst": {
-    color: "#ffb4a2",
+    color: "#d100d1",
   },
   "hljs-number": {
-    color: "#ffb4a2",
+    color: "#d100d1",
   },
   "hljs-string": {
     color: "#06bcc2", // string inside classes
   },
   "hljs-doctag": {
-    color: "#ffb4a2",
+    color: "#d100d1",
   },
   "hljs-selector-id": {
-    color: "#ffb4a2",
+    color: "#d100d1",
   },
   "hljs-selector-class": {
-    color: "#ffb4a2",
+    color: "#d100d1",
   },
   "hljs-section": {
-    color: "#ffb4a2",
+    color: "#d100d1",
   },
   "hljs-type": {
-    color: "#ffb4a2",
+    color: "#d100d1",
   },
   "hljs-params": {
-    color: "#ffb4a2",
+    color: "#d100d1",
   },
   "hljs-title": {
-    color: "#ffb4a2",
+    color: "#d100d1",
     fontWeight: "bold",
   },
   "hljs-tag": {
@@ -103,7 +103,7 @@ const syntax = {
     display: "block",
     overflowX: "auto",
     background: "#eff2f9",
-    color: "#c4c5c9", // text inside tags and divs
+    color: "#6a4cff", // text inside tags and divs
     padding: "0.5em",
     border: "1px solid #eff2f9",
     "border-radius": "0px",
