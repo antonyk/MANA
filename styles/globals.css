@@ -18,8 +18,8 @@ a {
 }
 
 .uk-link,
-a:hover ,
-.uk-text-primary, 
+a:hover,
+.uk-text-primary,
 .uk-background-primary {
   color: #6647ff;
 }
@@ -32,6 +32,10 @@ a:hover ,
 
 .sidebar {
   /* background: whitesmoke; */
+  background: #eff2f9;
+}
+
+.uk-tile-muted {
   background: #eff2f9;
 }
 
