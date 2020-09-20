@@ -128,6 +128,10 @@ export const uikit = {
             varname: 'is_disabled',
             initialValue: '',
             currentValue: '',
+            values: {
+              false: '',
+              true: ' disabled',
+            },
           },
           {
             name: 'button-style',
