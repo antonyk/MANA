@@ -23,7 +23,7 @@ export default function Template() {
     <>
       <div className='uk-section uk-section-small'>
         <div className='uk-container'>
-          <h2 className='uk-text-primary'>UIKit Button</h2>
+          <h2 className=''>UIKit Button</h2>
           <div id='preview' className='uk-card uk-card-body uk-card-default uk-margin-bottom' >
             <div className='uk-tile uk-tile-muted'>
               {code[0]}
