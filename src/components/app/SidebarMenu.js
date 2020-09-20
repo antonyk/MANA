@@ -20,7 +20,7 @@ export default function SidebarMenu() {
         <select className="uk-select" onChange={handleClick}>
           <option>Select Framework</option>
           {frameworks.map((item) => (
-            <option
+            <option key={item.framework_name}
             value={item.framework_id}
           >{`${item.framework_name}`}</option>
           ))}
@@ -29,7 +29,7 @@ export default function SidebarMenu() {
       {frameworkID
         ? frameworks[frameworkID].components
             .sort()
-            .map((item) => <li className='uk-margin-top'>{`${item}`}</li>)
+            .map((item) => <li key={item}className='uk-margin-top'>{`${item}`}</li>)
           : ""}
       </ul>  
     </>
