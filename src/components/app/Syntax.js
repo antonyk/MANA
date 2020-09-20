@@ -1,97 +1,112 @@
 const syntax = {
   "hljs-comment": {
-    "color": "#d4d0ab"
+    color: "#64dfdf",
+    fontStyle: "italic",
   },
   "hljs-quote": {
-    "color": "#d4d0ab"
-  },
-  "hljs-variable": {
-    "color": "#ffa07a"
-  },
-  "hljs-template-variable": {
-    "color": "#ffa07a"
-  },
-  "hljs-tag": {
-    "color": "#ffa07a"
-  },
-  "hljs-name": {
-    "color": "#ffa07a"
-  },
-  "hljs-selector-id": {
-    "color": "#ffa07a"
-  },
-  "hljs-selector-class": {
-    "color": "#ffa07a"
-  },
-  "hljs-regexp": {
-    "color": "#ffa07a"
-  },
-  "hljs-deletion": {
-    "color": "#ffa07a"
-  },
-  "hljs-number": {
-    "color": "#f5ab35"
-  },
-  "hljs-built_in": {
-    "color": "#f5ab35"
-  },
-  "hljs-builtin-name": {
-    "color": "#f5ab35"
-  },
-  "hljs-literal": {
-    "color": "#f5ab35"
-  },
-  "hljs-type": {
-    "color": "#f5ab35"
-  },
-  "hljs-params": {
-    "color": "#f5ab35"
-  },
-  "hljs-meta": {
-    "color": "#f5ab35"
-  },
-  "hljs-link": {
-    "color": "#f5ab35"
-  },
-  "hljs-attribute": {
-    "color": "#ffd700"
-  },
-  "hljs-string": {
-    "color": "#abe338"
-  },
-  "hljs-symbol": {
-    "color": "#abe338"
-  },
-  "hljs-bullet": {
-    "color": "#abe338"
-  },
-  "hljs-addition": {
-    "color": "#abe338"
-  },
-  "hljs-title": {
-    "color": "#00e0e0"
-  },
-  "hljs-section": {
-    "color": "#00e0e0"
+    color: "#64dfdf",
+    fontStyle: "italic",
   },
   "hljs-keyword": {
-    "color": "#dcc6e0"
+    color: "#ffb4a2",
   },
   "hljs-selector-tag": {
-    "color": "#dcc6e0"
+    color: "#ffb4a2",
   },
-  "hljs": {
-    "display": "block",
-    "overflowX": "auto",
-    "background": "#eff2f9",
-    "color": "#f8f8f2",
-    "padding": "0.5em"
+  "hljs-literal": {
+    color: "#ffb4a2",
+  },
+  "hljs-subst": {
+    color: "#ffb4a2",
+  },
+  "hljs-number": {
+    color: "#ffb4a2",
+  },
+  "hljs-string": {
+    color: "#06bcc2", // string inside classes
+  },
+  "hljs-doctag": {
+    color: "#ffb4a2",
+  },
+  "hljs-selector-id": {
+    color: "#ffb4a2",
+  },
+  "hljs-selector-class": {
+    color: "#ffb4a2",
+  },
+  "hljs-section": {
+    color: "#ffb4a2",
+  },
+  "hljs-type": {
+    color: "#ffb4a2",
+  },
+  "hljs-params": {
+    color: "#ffb4a2",
+  },
+  "hljs-title": {
+    color: "#ffb4a2",
+    fontWeight: "bold",
+  },
+  "hljs-tag": {
+    color: "#6a4dff", // greater/less than and className
+    fontWeight: "normal",
+  },
+  "hljs-name": {
+    color: "#d100d1", // tag names
+    fontWeight: "normal",
+  },
+  "hljs-attribute": {
+    color: "#6a4dff",
+    fontWeight: "normal",
+  },
+  "hljs-variable": {
+    color: "#6a4dff",
+  },
+  "hljs-template-variable": {
+    color: "#6a4dff",
+  },
+  "hljs-regexp": {
+    color: "#6a4dff",
+  },
+  "hljs-link": {
+    color: "#6a4dff",
+  },
+  "hljs-symbol": {
+    color: "#6a4dff",
+  },
+  "hljs-bullet": {
+    color: "#6a4dff",
+  },
+  "hljs-built_in": {
+    color: "#6a4dff",
+  },
+  "hljs-builtin-name": {
+    color: "#6a4dff",
+  },
+  "hljs-meta": {
+    color: "#6a4dff",
+    fontWeight: "bold",
+  },
+  "hljs-deletion": {
+    background: "#6a4dff",
+  },
+  "hljs-addition": {
+    background: "#6a4dff",
   },
   "hljs-emphasis": {
-    "fontStyle": "italic"
+    fontStyle: "italic",
   },
   "hljs-strong": {
-    "fontWeight": "bold"
-  }
+    fontWeight: "bold",
+  },
+  hljs: {
+    display: "block",
+    overflowX: "auto",
+    background: "#eff2f9",
+    color: "#c4c5c9", // text inside tags and divs
+    padding: "0.5em",
+    border: "1px solid #eff2f9",
+    "border-radius": "0px",
+  },
 };
-export default syntax
+export default syntax;

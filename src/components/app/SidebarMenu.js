@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { frameworks } from "../../../data/framework_data";
 
 export default function SidebarMenu() {
-  const [frameworkID, setFrameworkID] = useState(null);
+  const [frameworkID, setFrameworkID] = useState(4);
 
   const handleClick = (event) => {
     setFrameworkID(event.target.value);
@@ -11,27 +11,24 @@ export default function SidebarMenu() {
   return (
     <>
       <ul className="uk-nav uk-nav-default">
-        {/* {frameworks.map((item) => (
-          <h4
-            id={item.framework_id}
-            onClick={handleClick}
-          >{`${item.framework_name}`}</h4>
-        ))} */}
         <select className="uk-select" onChange={handleClick}>
-          <option>Select Framework</option>
+          <option value={4}>Select Framework</option>
           {frameworks.map((item) => (
-            <option key={item.framework_name}
-            value={item.framework_id}
-          >{`${item.framework_name}`}</option>
+            <option
+              key={item.framework_name}
+              value={item.framework_id}
+            >{`${item.framework_name}`}</option>
           ))}
         </select>
-      
-      {frameworkID
-        ? frameworks[frameworkID].components
-            .sort()
-            .map((item) => <li key={item}className='uk-margin-top'>{`${item}`}</li>)
+
+        {frameworkID != 4
+          ? frameworks[frameworkID].components.sort().map((item) => (
+              <li key={item} className="uk-margin-top">
+                <a href="#">{`${item}`}</a>
+              </li>
+            ))
           : ""}
-      </ul>  
+      </ul>
     </>
   );
 }
