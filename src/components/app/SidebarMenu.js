@@ -11,12 +11,6 @@ export default function SidebarMenu() {
   return (
     <>
       <ul className="uk-nav uk-nav-default">
-        {/* {frameworks.map((item) => (
-          <h4
-            id={item.framework_id}
-            onClick={handleClick}
-          >{`${item.framework_name}`}</h4>
-        ))} */}
         <select className="uk-select" onChange={handleClick}>
           <option>Select Framework</option>
           {frameworks.map((item) => (
