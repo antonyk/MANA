@@ -122,10 +122,12 @@ export const uikit = {
             name: 'button-disabled',
             type: 'checkbox',
             cssClass: 'mana-checkbox',
-            varname: 'is_disabled',
             initial: false,
             current: false,
             label: 'Disabled',
+            varname: 'is_disabled',
+            initialValue: null,
+            currentValue: null,
           },
           {
             name: 'button-style',
@@ -139,10 +141,12 @@ export const uikit = {
               { name: 'Link', value: 'uk-button-link' },
             ],
             cssClass: 'mana-radio',
-            varname: 'style',
             initial: 'Default',
             current: 'Default',
             label: 'Style',
+            varname: 'style',
+            initialValue: 'uk-button-default',
+            currentValue: 'uk-button-default',
           },
           {
             name: 'button-size',
@@ -153,10 +157,12 @@ export const uikit = {
               { name: 'Large', value: 'uk-button-large' },
             ],
             cssClass: 'mana-radio',
-            varname: 'size',
             initial: 'Default',
             current: 'Default',
             label: 'Size',
+            varname: 'size',
+            initialValue: '',
+            currentValue: '',
           },
         ],
       },
@@ -164,30 +170,33 @@ export const uikit = {
         <button className="uk-button {{style}} {{size}} {{is_disabled}}"></button>
       `,
     },
-    {
-      name: 'label',
-      schema: {
-        settings: [
-          {
-            name: 'button-style',
-            type: 'radio',
-            items: [
-              { name: 'Default', value: '' },
-              { name: 'Success', value: '.uk-button-success' },
-              { name: 'Warning', value: '.uk-button-warning' },
-              { name: 'Danger', value: '.uk-button-danger' },
-            ],
-            class: 'mana-radio',
-            varname: 'style',
-            default: 'Default',
-            label: 'Style',
-          },
-        ],
-      },
-      template: `
-        <span class="uk-label {{style}} {{is_disabled}}"></span>      
-      `,
-    },
+    // {
+    //   name: 'label',
+    //   schema: {
+    //     settings: [
+    //       {
+    //         name: 'button-style',
+    //         type: 'radio',
+    //         items: [
+    //           { name: 'Default', value: '' },
+    //           { name: 'Success', value: '.uk-button-success' },
+    //           { name: 'Warning', value: '.uk-button-warning' },
+    //           { name: 'Danger', value: '.uk-button-danger' },
+    //         ],
+    //         cssClass: 'mana-radio',
+    //         varname: 'style',
+    //         initial: 'Default',
+    //         current: 'Default',
+    //         initialValue: '',
+    //         currentValue: '',
+    //         label: 'Style',
+    //       },
+    //     ],
+    //   },
+    //   template: `
+    //     <span class="uk-label {{style}} {{is_disabled}}"></span>
+    //   `,
+    // },
   ],
 }
 

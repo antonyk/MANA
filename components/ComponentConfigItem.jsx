@@ -1,42 +1,43 @@
 import { useEffect, useState } from 'react'
 
 export default function ComponentConfigItem(props) {
-  const { type, label, initial, cssClass, name, varname } = props.setting
-  const [current, setCurrent] = useState(props.setting.current)
-  const [curValue, setCurValue] = useState()
+  const [setting, setSetting] = useState(props.setting)
+  const { type, label, cssClass, name } = props.setting
 
   const testing = <h1>HELLO</h1>
 
   function checkboxChangeHandler(e) {
-    setCurrent(e.target.checked)
-    setCurValue({ [varname]: e.target.checked })
+    setSetting({
+      ...setting,
+      current: e.target.checked,
+      currentValue: e.target.checked ? 'checked' : null,
+    })
   }
 
-  function radioChangeHandler(e, val) {
-    setCurrent(e.target.checked)
-    setCurValue({ [varname]: val })
-    console.log(val)
+  function radioChangeHandler(e, item) {
+    setSetting({ ...setting, current: item.name, currentValue: item.value })
+    // console.log(item)
   }
-
-  function reset() {
-    // if checkbox
-    if (type == 'checkbox') {
-      setCheckboxValues()
-      setCurValue()
-    }
-  }
-
-  //   const curValue = {"size":".uk-button-small"}
 
   useEffect(() => {
-    props.setValue(curValue)
-  }, [curValue])
+    props.updateParentSetting(props.idx, setting)
+  }, [setting])
 
-  return (
-    <>
-      {/* {testing} */}
-      {type == 'checkbox' ? (
-        current ? (
+  function decorate(...params) {
+    return (
+      <div className='uk-margin uk-grid-small uk-child-width-auto uk-grid'>
+        {item}
+        <div className='uk-margin uk-grid-small uk-child-width-auto uk-grid'></div>
+      </div>
+    )
+  }
+
+  function getHtml(type) {
+    let content = ''
+
+    switch (type) {
+      case 'checkbox':
+        content = setting.current ? (
           <label>
             <input
               name={name}
@@ -58,17 +59,84 @@ export default function ComponentConfigItem(props) {
             {label}
           </label>
         )
-      ) : type == 'radio' ? (
+      case 'radio':
+        content = setting.items.map((item) => {
+          return item.name == setting.current ? (
+            <label>
+              <input
+                name={name}
+                className={'uk-radio ' + cssClass}
+                type='radio'
+                checked
+                onChange={(e) => radioChangeHandler(e, item)}
+              />
+              {item.name}
+            </label>
+          ) : (
+            <label>
+              <input
+                name={name}
+                className={'uk-radio ' + cssClass}
+                type='radio'
+                onChange={(e) => radioChangeHandler(e, item)}
+              />
+              {item.name}
+            </label>
+          )
+        })
+      default:
+        content = 'Unsupported'
+    }
+
+    return content
+  }
+
+  // return (
+  //   <div className='uk-margin uk-grid-small uk-child-width-auto uk-grid'>
+  //     {getHtml(setting.type)}
+  //   </div>
+  // )
+
+  switch (setting.type) {
+    case 'checkbox':
+      return (
         <div className='uk-margin uk-grid-small uk-child-width-auto uk-grid'>
-          {props.setting.items.map((item) => {
-            return item.name == current ? (
+          {setting.current ? (
+            <label>
+              <input
+                name={name}
+                className={'uk-checkbox ' + cssClass}
+                type='checkbox'
+                checked
+                onChange={checkboxChangeHandler}
+              />
+              {label}
+            </label>
+          ) : (
+            <label>
+              <input
+                name={name}
+                className={'uk-checkbox ' + cssClass}
+                type='checkbox'
+                onChange={checkboxChangeHandler}
+              />
+              {label}
+            </label>
+          )}
+        </div>
+      )
+    case 'radio':
+      return (
+        <div className='uk-margin uk-grid-small uk-child-width-auto uk-grid'>
+          {setting.items.map((item) => {
+            return item.name == setting.current ? (
               <label>
                 <input
                   name={name}
                   className={'uk-radio ' + cssClass}
                   type='radio'
                   checked
-                  onChange={(e) => radioChangeHandler(e, item.value)}
+                  onChange={(e) => radioChangeHandler(e, item)}
                 />
                 {item.name}
               </label>
@@ -78,16 +146,15 @@ export default function ComponentConfigItem(props) {
                   name={name}
                   className={'uk-radio ' + cssClass}
                   type='radio'
-                  onChange={(e) => radioChangeHandler(e, item.value)}
+                  onChange={(e) => radioChangeHandler(e, item)}
                 />
                 {item.name}
               </label>
             )
           })}
         </div>
-      ) : (
-        ''
-      )}
-    </>
-  )
+      )
+    default:
+      return 'Unsupported'
+  }
 }
