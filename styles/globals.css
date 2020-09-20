@@ -65,3 +65,9 @@ a:hover,
   background-color: #6a4cff !important;
   border-color: #0000;
 }
+
+.uk-checkbox,
+.uk-checkbox:indeterminate,
+.uk-radio {
+  border-color: #6a4cff !important;
+}
