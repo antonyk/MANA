@@ -113,9 +113,9 @@ export const schemas = [
 ]
 
 export const uikit = {
-  components: [
-    {
-      name: 'button',
+  components: {
+    button: {
+      name: 'Button',
       schema: {
         settings: [
           {
@@ -126,8 +126,8 @@ export const uikit = {
             current: false,
             label: 'Disabled',
             varname: 'is_disabled',
-            initialValue: null,
-            currentValue: null,
+            initialValue: '',
+            currentValue: '',
           },
           {
             name: 'button-style',
@@ -166,38 +166,44 @@ export const uikit = {
           },
         ],
       },
-      template: `
-        <button className="uk-button {{style}} {{size}} {{is_disabled}}"></button>
+      template:
+        // `
+        // <div>
+        //   <button className=${codeStringClass}>Button</button>
+        // </div>
+        // `
+        `
+        <button class="uk-button {{style}} {{size}} {{is_disabled}}">Button</button>
       `,
     },
-    // {
-    //   name: 'label',
-    //   schema: {
-    //     settings: [
-    //       {
-    //         name: 'button-style',
-    //         type: 'radio',
-    //         items: [
-    //           { name: 'Default', value: '' },
-    //           { name: 'Success', value: '.uk-button-success' },
-    //           { name: 'Warning', value: '.uk-button-warning' },
-    //           { name: 'Danger', value: '.uk-button-danger' },
-    //         ],
-    //         cssClass: 'mana-radio',
-    //         varname: 'style',
-    //         initial: 'Default',
-    //         current: 'Default',
-    //         initialValue: '',
-    //         currentValue: '',
-    //         label: 'Style',
-    //       },
-    //     ],
-    //   },
-    //   template: `
-    //     <span class="uk-label {{style}} {{is_disabled}}"></span>
-    //   `,
-    // },
-  ],
+    label: {
+      name: 'label',
+      schema: {
+        settings: [
+          {
+            name: 'button-style',
+            type: 'radio',
+            items: [
+              { name: 'Default', value: '' },
+              { name: 'Success', value: '.uk-button-success' },
+              { name: 'Warning', value: '.uk-button-warning' },
+              { name: 'Danger', value: '.uk-button-danger' },
+            ],
+            cssClass: 'mana-radio',
+            varname: 'style',
+            initial: 'Default',
+            current: 'Default',
+            initialValue: '',
+            currentValue: '',
+            label: 'Style',
+          },
+        ],
+      },
+      template: `
+        <span class="uk-label {{style}} {{is_disabled}}"></span>
+      `,
+    },
+  },
 }
 
 export const initialTemplate = {}

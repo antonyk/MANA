@@ -5,7 +5,7 @@ import ComponentConfigItem from '../components/ComponentConfigItem'
 export default function ComponentSettings(props) {
   const [settings, setSettings] = useState(props.settings)
   const [configValues, setConfigValues] = useState({})
-  const [config, setConfig] = useState({})
+  // const [config, setConfig] = useState({})
 
   useEffect(() => {
     // console.log('settings has changed')
@@ -15,13 +15,14 @@ export default function ComponentSettings(props) {
     settings.forEach((setting) => {
       newConfig[setting.varname] = setting.currentValue
     })
-    setConfigValues(newConfig)
+
+    props.setTemplateData(newConfig)
+    // setConfigValues(newConfig)
   }, [settings])
 
   function reset() {
     // e.preventDefault()
     console.log(settings)
-    // const newSettings = [...settings]
     const newSettings = settings.map((item) => {
       return { ...item, currentValue: item.initialValue, current: item.initial }
     })
@@ -29,23 +30,12 @@ export default function ComponentSettings(props) {
     // console.log('Resetting...')
   }
 
-  // function updateParentConfigValue(val) {
-  //   setConfigValues({ ...configValues, ...val })
-  // }
-
   function updateParentSetting(idx, setting) {
     // console.log(settings)
     // console.log(setting)
     const newSettings = [...settings]
     newSettings[idx] = setting
     // console.log('split\n')
-    // const newSettings = settings.map((item) => {
-    //   if (item.name == setting.name) {
-    //     return setting
-    //   } else {
-    //     return item
-    //   }
-    // })
     // console.log(newSettings)
     setSettings(newSettings)
     // console.log('right after\n')
@@ -70,7 +60,7 @@ export default function ComponentSettings(props) {
       <button onClick={reset}>Reset</button>
       <section>
         <h2>Output JSON</h2>
-        <pre>{JSON.stringify(configValues, null, 2)}</pre>
+        <pre>{JSON.stringify(props.templateData, null, 2)}</pre>
       </section>
     </div>
   )
