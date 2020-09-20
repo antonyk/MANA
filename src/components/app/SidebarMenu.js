@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { frameworks } from "../../../data/framework_data";
 
 export default function SidebarMenu() {
-  const [frameworkID, setFrameworkID] = useState(4);
+  const [frameworkID, setFrameworkID] = useState(0);
 
   const handleClick = (event) => {
     setFrameworkID(event.target.value);
@@ -12,7 +12,7 @@ export default function SidebarMenu() {
     <>
       <ul className="uk-nav uk-nav-default">
         <select className="uk-select" onChange={handleClick}>
-          <option value={4}>Select Framework</option>
+          {/* <option value={4}>Select Framework</option> */}
           {frameworks.map((item) => (
             <option
               key={item.framework_name}
