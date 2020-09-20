@@ -29,12 +29,12 @@ export default function Header() {
           <div className='uk-navbar-right uk-margin-right'>
             <ul className='uk-navbar-nav'>
               <li>
-                <a href="#"><i class="fad fa-user-circle fa-2x"></i></a>
-                <div class="uk-navbar-dropdown">
-                    <ul class="uk-nav uk-navbar-dropdown-nav">
-                        <li><a href="#"><i class="fad fa-user uk-margin-right"></i> Profile</a></li>
-                        <li><a href="#"><i class="fad fa-cog uk-margin-right"></i>Settings</a></li>
-                        <li><a href="#"><i class="fad fa-power-off uk-margin-right"></i>Logout</a></li>
+                <a href="#"><i className="fad fa-user-circle fa-2x"></i></a>
+                <div className="uk-navbar-dropdown">
+                    <ul className="uk-nav uk-navbar-dropdown-nav">
+                        <li><a href="#"><i className="fad fa-user uk-margin-right"></i> Profile</a></li>
+                        <li><a href="#"><i className="fad fa-cog uk-margin-right"></i>Settings</a></li>
+                        <li><a href="#"><i className="fad fa-power-off uk-margin-right"></i>Logout</a></li>
                     </ul>
                 </div>
               </li>
