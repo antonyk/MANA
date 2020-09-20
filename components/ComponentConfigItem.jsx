@@ -6,11 +6,11 @@ export default function ComponentConfigItem(props) {
 
   const testing = <h1>HELLO</h1>
 
-  function checkboxChangeHandler(e) {
+  function checkboxChangeHandler(e, setting) {
     setSetting({
       ...setting,
       current: e.target.checked,
-      currentValue: e.target.checked ? 'checked' : null,
+      currentValue: setting.values[e.target.checked],
     })
   }
 
@@ -34,7 +34,7 @@ export default function ComponentConfigItem(props) {
                 className={'uk-checkbox uk-margin-right' + cssClass}
                 type='checkbox'
                 checked
-                onChange={checkboxChangeHandler}
+                onChange={(e) => checkboxChangeHandler(e, setting)}
               />
               {label}
             </label>
@@ -44,7 +44,7 @@ export default function ComponentConfigItem(props) {
                 name={name}
                 className={'uk-checkbox uk-margin-right' + cssClass}
                 type='checkbox'
-                onChange={checkboxChangeHandler}
+                onChange={(e) => checkboxChangeHandler(e, setting)}
               />
               {label}
             </label>

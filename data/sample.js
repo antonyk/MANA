@@ -128,33 +128,37 @@ export const uikit = {
             varname: 'is_disabled',
             initialValue: '',
             currentValue: '',
+            values: {
+              false: '',
+              true: ' disabled',
+            },
           },
           {
             name: 'button-style',
             type: 'radio',
             items: [
-              { name: 'Default', value: 'uk-button-default' },
-              { name: 'Primary', value: 'uk-button-primary' },
-              { name: 'Secondary', value: 'uk-button-secondary' },
-              { name: 'Danger', value: 'uk-button-danger' },
-              { name: 'Text', value: 'uk-button-text' },
-              { name: 'Link', value: 'uk-button-link' },
+              { name: 'Default', value: ' uk-button-default' },
+              { name: 'Primary', value: ' uk-button-primary' },
+              { name: 'Secondary', value: ' uk-button-secondary' },
+              { name: 'Danger', value: ' uk-button-danger' },
+              { name: 'Text', value: ' uk-button-text' },
+              { name: 'Link', value: ' uk-button-link' },
             ],
             cssClass: '',
             initial: 'Default',
             current: 'Default',
             label: 'Style',
             varname: 'style',
-            initialValue: 'uk-button-default',
-            currentValue: 'uk-button-default',
+            initialValue: ' uk-button-default',
+            currentValue: ' uk-button-default',
           },
           {
             name: 'button-size',
             type: 'radio',
             items: [
               { name: 'Default', value: '' },
-              { name: 'Small', value: 'uk-button-small' },
-              { name: 'Large', value: 'uk-button-large' },
+              { name: 'Small', value: ' uk-button-small' },
+              { name: 'Large', value: ' uk-button-large' },
             ],
             cssClass: '',
             initial: 'Default',
@@ -173,7 +177,7 @@ export const uikit = {
         // </div>
         // `
         `
-        <button class="uk-button {{style}} {{size}} {{is_disabled}}">Button</button>
+        <button class="uk-button{{style}}{{size}}"{{is_disabled}}>Button</button>
       `,
     },
     label: {
