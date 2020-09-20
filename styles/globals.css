@@ -58,3 +58,10 @@ a:hover,
 ::selection {
   background: #6a4cff
 }
+
+.uk-checkbox:checked,
+.uk-checkbox:indeterminate,
+.uk-radio:checked {
+  background-color: #6a4cff !important;
+  border-color: #0000;
+}
