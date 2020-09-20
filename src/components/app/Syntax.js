@@ -104,7 +104,7 @@ const syntax = {
     overflowX: "auto",
     background: "#eff2f9",
     color: "#6a4cff", // text inside tags and divs
-    padding: "0.2em",
+    padding: "0.5em",
     border: "1px solid #eff2f9",
     "border-radius": "0px",
   },
