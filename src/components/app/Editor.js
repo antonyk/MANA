@@ -1,8 +1,7 @@
 import React from 'react'
 import useClipboard from 'react-use-clipboard'
 import SyntaxHighlighter from 'react-syntax-highlighter'
-import {docco} from 'react-syntax-highlighter/dist/cjs/styles/hljs';
-// import syntax from '../app/Syntax'
+import syntax from '../app/Syntax'
 
 export default function Template() {
   
@@ -43,7 +42,7 @@ export default function Template() {
                 <i className='fad fa-copy fa-lg'></i>
                 {/* {isCopied ? 'Yes! 👍' : 'Nope! 👎'} */}
             </a>
-            <SyntaxHighlighter language='javascript' style={docco}>
+            <SyntaxHighlighter language='javascript' style={syntax}>
               {codeString}
             </SyntaxHighlighter>
           </div>
