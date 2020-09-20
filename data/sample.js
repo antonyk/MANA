@@ -170,14 +170,8 @@ export const uikit = {
           },
         ],
       },
-      template:
-        // `
-        // <div>
-        //   <button className=${codeStringClass}>Button</button>
-        // </div>
-        // `
-        `
-        <button class="uk-button{{style}}{{size}}"{{is_disabled}}>Button</button>
+      template: `
+<button class="uk-button{{style}}{{size}}"{{is_disabled}}>Button</button>
       `,
     },
     accordion: {
@@ -217,56 +211,71 @@ export const uikit = {
         ],
       },
       template: `
-        <ul uk-accordion="{{no_collapsing}}{{multiple_open}}">
-        <li class='uk-open'>
-          <a class='uk-accordion-title' href='#'>
-            Item 1
-          </a>
-          <div class='uk-accordion-content'>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-          </div>
-        </li>
-        <li>
-          <a class='uk-accordion-title' href='#'>
-            Item 2
-          </a>
-          <div class='uk-accordion-content'>
-            <p>
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-              ut aliquip ex ea commodo consequat. Duis aute irure dolor reprehenderit.
-            </p>
-          </div>
-        </li>
-        <li>
-          <a class='uk-accordion-title' href='#'>
-            Item 3
-          </a>
-          <div class='uk-accordion-content'>
-            <p>
-              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-              dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-              proident.
-            </p>
-          </div>
-        </li>
-      </ul>
+<ul uk-accordion="{{no_collapsing}}{{multiple_open}}">
+  <li class='uk-open'>
+    <a class='uk-accordion-title' href='#'>
+      Item 1
+    </a>
+    <div class='uk-accordion-content'>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+    </div>
+  </li>
+  <li>
+    <a class='uk-accordion-title' href='#'>
+      Item 2
+    </a>
+    <div class='uk-accordion-content'>
+      <p>
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+        ut aliquip ex ea commodo consequat. Duis aute irure dolor reprehenderit.
+      </p>
+    </div>
+  </li>
+  <li>
+    <a class='uk-accordion-title' href='#'>
+      Item 3
+    </a>
+    <div class='uk-accordion-content'>
+      <p>
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+        proident.
+      </p>
+    </div>
+  </li>
+</ul>
       `,
     },
     label: {
-      name: 'label',
+      name: 'Label',
       schema: {
         settings: [
           {
-            name: 'button-style',
+            name: 'label-disabled',
+            type: 'checkbox',
+            cssClass: '',
+            initial: false,
+            current: false,
+            label: 'Disabled',
+            varname: 'is_disabled',
+            initialValue: '',
+            currentValue: '',
+            values: {
+              false: '',
+              true: ' disabled',
+            },
+          },
+          {
+            name: 'label-style',
             type: 'radio',
             items: [
               { name: 'Default', value: '' },
-              { name: 'Success', value: '.uk-button-success' },
-              { name: 'Warning', value: '.uk-button-warning' },
-              { name: 'Danger', value: '.uk-button-danger' },
+              { name: 'Success', value: ' uk-label-success' },
+              { name: 'Warning', value: ' uk-label-warning' },
+              { name: 'Danger', value: ' uk-label-danger' },
             ],
             cssClass: 'mana-radio',
             varname: 'style',
@@ -279,7 +288,7 @@ export const uikit = {
         ],
       },
       template: `
-        <span class="uk-label {{style}}{{is_disabled}}"></span>
+<span class="uk-label{{style}}"{{is_disabled}}>Hello World!</span>
       `,
     },
   },
