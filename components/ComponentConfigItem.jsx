@@ -31,7 +31,7 @@ export default function ComponentConfigItem(props) {
             <label>
               <input
                 name={name}
-                className={'uk-checkbox ' + cssClass}
+                className={'uk-checkbox uk-margin-right' + cssClass}
                 type='checkbox'
                 checked
                 onChange={checkboxChangeHandler}
@@ -42,7 +42,7 @@ export default function ComponentConfigItem(props) {
             <label>
               <input
                 name={name}
-                className={'uk-checkbox ' + cssClass}
+                className={'uk-checkbox uk-margin-right' + cssClass}
                 type='checkbox'
                 onChange={checkboxChangeHandler}
               />
@@ -59,7 +59,7 @@ export default function ComponentConfigItem(props) {
               <label>
                 <input
                   name={name}
-                  className={'uk-radio ' + cssClass}
+                  className={'uk-radio uk-margin-right' + cssClass}
                   type='radio'
                   checked
                   onChange={(e) => radioChangeHandler(e, item)}
@@ -70,7 +70,7 @@ export default function ComponentConfigItem(props) {
               <label>
                 <input
                   name={name}
-                  className={'uk-radio ' + cssClass}
+                  className={'uk-radio uk-margin-right' + cssClass}
                   type='radio'
                   onChange={(e) => radioChangeHandler(e, item)}
                 />

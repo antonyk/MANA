@@ -7,10 +7,9 @@ export default function Template() {
   let codeStringClass = `'uk-button uk-button-secondary'`;
   let codeClass = `uk-button uk-button-secondary`;
   let codeData = `disabled`;
-  let myid = `'tester'`;
   let codeString = `
   <div>
-    <button id=${myid} className=${codeStringClass} ${codeData}>Button</button>
+    <button className=${codeStringClass} ${codeData}>Button</button>
   </div>
   `;
   let code = [

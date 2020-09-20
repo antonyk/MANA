@@ -44,7 +44,6 @@ export default function ComponentSettings(props) {
 
   return (
     <div>
-      <h2>Component Settings</h2>
       <section>{/* <pre>{JSON.stringify(settings, null, 2)}</pre> */}</section>
       <form>
         {settings.map((item, idx) => (
@@ -57,11 +56,11 @@ export default function ComponentSettings(props) {
           />
         ))}
       </form>
-      <button onClick={reset}>Reset</button>
-      <section>
+      {/* <button className='uk-button uk-button-default' onClick={reset}>Reset</button> */}
+      {/* <section>
         <h2>Output JSON</h2>
         <pre>{JSON.stringify(props.templateData, null, 2)}</pre>
-      </section>
+      </section> */}
     </div>
   )
 }
