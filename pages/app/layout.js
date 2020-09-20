@@ -17,7 +17,7 @@ export default function Template() {
       <Header/>
       <div data-uk-grid>
         <div className='uk-width-medium uk-tile-secondary uk-visible@m' data-uk-height-viewport="offset-top: true">
-          <div className='uk-padding'>
+          <div className='sidebar uk-padding'>  
             <SidebarMenu />
           </div>
         </div>
