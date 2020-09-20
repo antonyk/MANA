@@ -180,6 +180,81 @@ export const uikit = {
         <button class="uk-button{{style}}{{size}}"{{is_disabled}}>Button</button>
       `,
     },
+    accordion: {
+      name: 'Accordion',
+      schema: {
+        settings: [
+          {
+            name: 'accordion-collapsible',
+            type: 'checkbox',
+            cssClass: '',
+            initial: true,
+            current: true,
+            label: 'Collapsible',
+            varname: 'no_collapsing',
+            initialValue: '',
+            currentValue: '',
+            values: {
+              true: '',
+              false: ' collapsible: false;',
+            },
+          },
+          {
+            name: 'accordion-multiple',
+            type: 'checkbox',
+            cssClass: '',
+            initial: false,
+            current: false,
+            label: 'Multiple open items',
+            varname: 'multiple_open',
+            initialValue: '',
+            currentValue: '',
+            values: {
+              true: ' multiple: true;',
+              false: '',
+            },
+          },
+        ],
+      },
+      template: `
+        <ul uk-accordion="{{no_collapsing}}{{multiple_open}}">
+        <li class='uk-open'>
+          <a class='uk-accordion-title' href='#'>
+            Item 1
+          </a>
+          <div class='uk-accordion-content'>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </div>
+        </li>
+        <li>
+          <a class='uk-accordion-title' href='#'>
+            Item 2
+          </a>
+          <div class='uk-accordion-content'>
+            <p>
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+              ut aliquip ex ea commodo consequat. Duis aute irure dolor reprehenderit.
+            </p>
+          </div>
+        </li>
+        <li>
+          <a class='uk-accordion-title' href='#'>
+            Item 3
+          </a>
+          <div class='uk-accordion-content'>
+            <p>
+              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+              dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+              proident.
+            </p>
+          </div>
+        </li>
+      </ul>
+      `,
+    },
     label: {
       name: 'label',
       schema: {
