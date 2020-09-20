@@ -12,7 +12,7 @@ export default function Template() {
       <Head>
         <title>{pageTitle}</title>
         <link rel="icon" href="/favicon.ico" />
-        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-VhBcF/php0Z/P5ZxlxaEx1GwqTQVIBu4G4giRWxTKOCjTxsPFETUDdVL5B6vYvOt" crossorigin="anonymous"></link>
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-VhBcF/php0Z/P5ZxlxaEx1GwqTQVIBu4G4giRWxTKOCjTxsPFETUDdVL5B6vYvOt" crossOrigin="anonymous"></link>
       </Head>
       <Header/>
       <div data-uk-grid>
