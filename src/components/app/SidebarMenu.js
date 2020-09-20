@@ -23,7 +23,7 @@ export default function SidebarMenu() {
       {frameworkID
         ? frameworks[frameworkID].components
             .sort()
-            .map((item) => <li key={item}className='uk-margin-top'>{`${item}`}</li>)
+            .map((item) => <li key={item}className='uk-margin-top'><a href='#'>{`${item}`}</a></li>)
           : ""}
       </ul>  
     </>
