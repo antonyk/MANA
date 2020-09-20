@@ -106,7 +106,7 @@ const syntax = {
     color: "#6a4cff", // text inside tags and divs
     padding: "0.5em",
     border: "1px solid #eff2f9",
-    "border-radius": "0px",
+    borderRadius: "0px",
   },
 };
 export default syntax;
