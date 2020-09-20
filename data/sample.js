@@ -291,6 +291,56 @@ export const uikit = {
 <span class="uk-label{{style}}"{{is_disabled}}>Hello World!</span>
       `,
     },
+    dropdown: {
+      name: 'Dropdown',
+      schema: {
+        settings: [
+          {
+            name: 'drop-mode-click',
+            type: 'checkbox',
+            cssClass: '',
+            initial: false,
+            current: false,
+            label: 'Force Click Mode',
+            varname: 'click_mode',
+            initialValue: '',
+            currentValue: '',
+            values: {
+              false: '',
+              true: ' mode: click',
+            },
+          },
+          {
+            name: 'drop-inline',
+            type: 'checkbox',
+            cssClass: '',
+            initial: true,
+            current: true,
+            label: 'Inline Mode',
+            varname: 'inline_mode',
+            initialValue: '',
+            currentValue: '',
+            values: {
+              false: '',
+              true: 'uk-inline',
+            },
+          },
+        ],
+      },
+      template: `
+<div>
+  <div class='{{inline_mode}}'>
+    <button class='uk-button uk-button-default' type='button'>
+      Dropdown
+    </button>
+    <div uk-dropdown='{{click_mode}}'>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt.
+    </div>
+  </div>
+</div>
+      `,
+    },
   },
 }
 
