@@ -204,7 +204,7 @@ export const uikit = {
         ],
       },
       template: `
-        <span class="uk-label {{style}} {{is_disabled}}"></span>
+        <span class="uk-label {{style}}{{is_disabled}}"></span>
       `,
     },
   },
