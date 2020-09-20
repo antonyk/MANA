@@ -95,7 +95,7 @@ export default function Editor() {
                 {/* {isCopied ? "Yes! 👍" : "Nope! 👎"} */}
               </a>
               <SyntaxHighlighter language='javascript' style={syntax}>
-                {`${compiledTemplate}`}
+                {compiledTemplate}
               </SyntaxHighlighter>
             </div>
           </div>
