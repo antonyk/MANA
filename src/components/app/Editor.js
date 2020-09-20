@@ -8,10 +8,11 @@ export default function Template() {
   
   let codeStringClass= `'uk-button uk-button-secondary'`
   let codeClass = `uk-button uk-button-secondary`
+  let codeData = ``
   let codeString = 
   `
   <div>
-    <button className=${codeStringClass}>Button</button>
+    <button className=${codeStringClass} ${codeData}>Button</button>
   </div>
   `
   let code = [
@@ -25,7 +26,7 @@ export default function Template() {
     <>
       <div className='uk-section uk-section-small'>
         <div className='uk-container'>
-          <h2 className='uk-text-center uk-text-primary'>UIKit Button</h2>
+          <h2 className='uk-text-center'>UIKit Button</h2>
           <div id='preview' className='uk-card uk-card-body uk-card-default uk-margin-bottom' >
             <h3 className='uk-card-title'>Preview</h3>
             <div className='uk-tile uk-tile-muted'>

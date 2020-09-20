@@ -1,5 +1,33 @@
-#navbar {
+body {
+  color: #5e6472;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.uk-card-default .uk-card-title {
+  color: #5e6472;
+}
+
+.uk-link,
+a {
+  color: #6a4cff;
+}
+
+.uk-link,
+a:hover ,
+.uk-text-primary, 
+.uk-background-primary {
+  color: #6647ff;
+}
+
+.uk-navbar-container {
+  background: #6a4cff !important;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  color: white;
 }
 
 .sidebar {
@@ -14,4 +42,15 @@
 
 .uk-logo {
   font-size: 2.5rem;
+}
+
+
+.uk-input:focus,
+.uk-select:focus,
+.uk-textarea:focus {
+  border-color: #6a4cff
+}
+
+::selection {
+  background: #6a4cff
 }
