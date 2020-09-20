@@ -1,5 +1,7 @@
 # Theme Builder / Style Builder
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/45eeec7f-70e4-44cb-bf99-0b6d47b497b5/deploy-status)](https://app.netlify.com/sites/rekit/deploys)
+
 ## URL structure
 
 ```
