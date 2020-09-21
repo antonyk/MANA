@@ -2,13 +2,13 @@ import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import useClipboard from 'react-use-clipboard'
 import SyntaxHighlighter from 'react-syntax-highlighter'
-import syntax from "./Syntax";
+import syntax from './Syntax'
 
-import ComponentConfigArea from '../../../components/ComponentConfigArea'
+import ComponentConfigArea from './ComponentConfigArea'
 import { frameworks, uikit } from '../../../data/sample'
 import Mustache from 'mustache'
 
-export default function Editor() {
+export default function ComponentBuilder() {
   const router = useRouter()
   const [component, setComponent] = useState(
     uikit.components[router.query['component']]
@@ -52,14 +52,18 @@ export default function Editor() {
       <>
         <div className='uk-section uk-section-small'>
           <div className='uk-container'>
-            <h2 className="uk-text-center">{frameworks.name} {component.name}</h2>
+            <h2 className='uk-text-center'>
+              {frameworks.name} {component.name}
+            </h2>
             <div
-                id='preview'
-                className='uk-card uk-card-default uk-card-body uk-margin-bottom'
-              >
+              id='preview'
+              className='uk-card uk-card-default uk-card-body uk-margin-bottom'
+            >
               <h3 className='uk-card-title'>Preview</h3>
-              <div className="uk-tile uk-tile-muted">
-                <div dangerouslySetInnerHTML={createMarkup(compiledTemplate)}></div>
+              <div className='uk-tile uk-tile-muted'>
+                <div
+                  dangerouslySetInnerHTML={createMarkup(compiledTemplate)}
+                ></div>
               </div>
             </div>
             <div
@@ -67,25 +71,23 @@ export default function Editor() {
               className='uk-card uk-card-default uk-card-body uk-margin-bottom'
             >
               <h3 className='uk-card-title'>Settings</h3>
-                {component ? (
-                  <>
-                    <ComponentConfigArea
-                      settings={component.schema.settings}
-                      templateData={templateData}
-                      setTemplateData={setTemplateData}
-                    />
-                  </>
-                ) : (
-                  ''
-                )}
+              {component ? (
+                <>
+                  <ComponentConfigArea
+                    settings={component.schema.settings}
+                    templateData={templateData}
+                    setTemplateData={setTemplateData}
+                  />
+                </>
+              ) : (
+                ''
+              )}
             </div>
             <div
               id='code'
               className='uk-card uk-card-default uk-card-body uk-margin-bottom'
             >
-              <h3 className='uk-card-title uk-display-inline'>
-                  Code
-              </h3>
+              <h3 className='uk-card-title uk-display-inline'>Code</h3>
               <a
                 onClick={setCopied}
                 data-uk-tooltip='Copy To Clipboard!'
@@ -104,14 +106,13 @@ export default function Editor() {
     )
   } else {
     return (
-      <div className="uk-section">
-        <div className="uk-container uk-container-small">
-          <div className="uk-card uk-card-primary uk-card-body uk-text-center uk-margin-top">
+      <div className='uk-section'>
+        <div className='uk-container uk-container-small'>
+          <div className='uk-card uk-card-primary uk-card-body uk-text-center uk-margin-top'>
             <h2>We are working on it!</h2>
           </div>
         </div>
       </div>
-      
     )
   }
 }

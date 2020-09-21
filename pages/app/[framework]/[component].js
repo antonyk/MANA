@@ -1,23 +1,31 @@
 import Head from 'next/head'
 import React from 'react'
 import Header from '../../../src/components/app/Header'
-import Editor from '../../../src/components/app/Editor2';
-import Sidebar from '../../../src/components/app/Sidebar';
-import SidebarMenu from '../../../src/components/app/SidebarMenu';
+import Editor from '../../../src/components/app/ComponentBuilder'
+import Sidebar from '../../../src/components/app/Sidebar'
+import SidebarMenu from '../../../src/components/app/SidebarMenu'
 
 export default function Template() {
-  let pageTitle = "xxx"
+  let pageTitle = 'xxx'
   return (
     <>
       <Head>
         <title>{pageTitle}</title>
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-VhBcF/php0Z/P5ZxlxaEx1GwqTQVIBu4G4giRWxTKOCjTxsPFETUDdVL5B6vYvOt" crossOrigin="anonymous"></link>
+        <link rel='icon' href='/favicon.ico' />
+        <link
+          rel='stylesheet'
+          href='https://pro.fontawesome.com/releases/v5.14.0/css/all.css'
+          integrity='sha384-VhBcF/php0Z/P5ZxlxaEx1GwqTQVIBu4G4giRWxTKOCjTxsPFETUDdVL5B6vYvOt'
+          crossOrigin='anonymous'
+        ></link>
       </Head>
-      <Header/>
+      <Header />
       <div data-uk-grid>
-        <div className='sidebar uk-width-medium uk-visible@m' data-uk-height-viewport="offset-top: true">
-          <div className='sidebar-container uk-padding'>  
+        <div
+          className='sidebar uk-width-medium uk-visible@m'
+          data-uk-height-viewport='offset-top: true'
+        >
+          <div className='sidebar-container uk-padding'>
             <SidebarMenu />
           </div>
         </div>
@@ -25,7 +33,7 @@ export default function Template() {
           <Editor />
         </div>
       </div>
-      <Sidebar/>
+      <Sidebar />
     </>
   )
 }

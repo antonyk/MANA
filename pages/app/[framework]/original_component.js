@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 import useClipboard from 'react-use-clipboard'
 import SyntaxHighlighter from 'react-syntax-highlighter'
 
-import ComponentConfigArea from '../../../components/ComponentConfigArea'
+import ComponentConfigArea from '../../../src/components/app/ComponentConfigArea'
 import { uikit } from '../../../data/sample'
 import Mustache from 'mustache'
 

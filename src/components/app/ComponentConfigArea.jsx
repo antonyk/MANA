@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-import ComponentConfigItem from '../components/ComponentConfigItem'
+import ComponentConfigItem from './ComponentConfigItem'
 
 export default function ComponentSettings(props) {
   const [settings, setSettings] = useState(props.settings)
